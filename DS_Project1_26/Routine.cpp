@@ -16,10 +16,13 @@ RoutineNode* Routine::mnode(const vector<string>& input){
 	int k,l;
 	stringstream ss(input[3]);
 	ss>>k;
-	stringstream ss(input[2]);
-	ss>>l;
+	int min, sec;
+    char colon;
+    stringstream ss_time(input[2]);
+    ss_time >> min >> colon >> sec;
+    int total_s = (min * 60) + sec;
 
-	RoutineNode* tmp =new RoutineNode (input[0],input[1],input[2],l,k);
+	RoutineNode* tmp =new RoutineNode (input[0],input[1],input[2],total_s,k);
 	total_sec  +=l;
 	total_kcal +=k;
 	return tmp;
@@ -63,19 +66,6 @@ bool Routine::pop_back() {
 	return true;
 }
 
-bool Routine::delete_node(const vector<string>& input) {
-	RoutineNode* tmp= head;
-	bool ttt=false;
-	while(tmp != nullptr){
-		if(tmp->search(input[0],input[1])){
-				total_sec  -=tmp->getsec();
-	total_kcal -=tmp->getkcal();
-			delete tmp;
-			ttt=true;
-		}
-		
-	}return ttt;
-}
 
 bool Routine::empty() {
 	if(count ==0)return true;
@@ -108,31 +98,62 @@ int Routine::calories() {
 	return total_kcal;
 	return 0;
 }
-void Routine::delete_ex(string input){
-	RoutineNode*tmp=head;
-	while(tmp!=nullptr){
-		if(tmp->sec(input)){
-			if(tmp==head){
-				head=tmp->getnext();
+void Routine::delete_ex(string input) {
+	RoutineNode* tmp = head;
+	while(tmp != nullptr) {
+		RoutineNode* tmpp = tmp->getnext();
+		if(tmp->sec(input)) {
+			if(tmp == head) {
+				head = tmp->getnext();
 			}
-			if(tmp==tail){
-				head=tmp->getprev();
+			if(tmp == tail) {
+				tail = tmp->getprev();
 			}
+			total_sec -= tmp->getsec();
+			total_kcal -= tmp->getkcal();
 			delete tmp;
 		}
+		tmp = tmpp;
 	}
 }
-void Routine::delete_eq(string input){
-	RoutineNode*tmp=head;
-	while(tmp!=nullptr){
-		if(tmp->seq(input)){
-			if(tmp==head){
-				head=tmp->getnext();
+
+void Routine::delete_eq(string input) {
+	RoutineNode* tmp = head;
+	while(tmp != nullptr) {
+		RoutineNode* tmpp = tmp->getnext();
+		if(tmp->seq(input)) {
+			if(tmp == head) {
+				head = tmp->getnext();
 			}
-			if(tmp==tail){
-				head=tmp->getprev();
+			if(tmp == tail) {
+				tail = tmp->getprev();
 			}
+			total_sec -= tmp->getsec();
+			total_kcal -= tmp->getkcal();
 			delete tmp;
 		}
+		tmp = tmpp;
 	}
+}
+
+bool Routine::delete_node(const vector<string>& input) {
+	RoutineNode* tmp = head;
+	bool ttt = false;
+	while(tmp != nullptr) {
+		RoutineNode* tmpp = tmp->getnext();
+		if(tmp->search(input[0], input[1])) {
+			if(tmp == head) {
+				head = tmp->getnext();
+			}
+			if(tmp == tail) {
+				tail = tmp->getprev();
+			}
+			total_sec -= tmp->getsec();
+			total_kcal -= tmp->getkcal();
+			delete tmp;
+			ttt = true;
+		}
+		tmp = tmpp;
+	}
+	return ttt;
 }

@@ -11,7 +11,7 @@ public:
 	EquipmentBST(outstream& ost);
 	~EquipmentBST();
 
-	
+	bool empty() { return root == nullptr; }
 	void insert(vector<string>& input);
 	void position(EquipmentBSTNode*tmp);
 	EquipmentBSTNode* search(string exce);

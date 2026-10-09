@@ -28,4 +28,5 @@ public:
 	string print();
 	int duration();
 	int calories();
+	int get_count() { return count; }
 };

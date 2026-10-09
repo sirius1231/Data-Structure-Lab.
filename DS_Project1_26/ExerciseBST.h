@@ -16,7 +16,7 @@ public:
 	void position(ExerciseBSTNode*tmp);
 	ExerciseBSTNode* search(string exce);
 	ExerciseBSTNode* ExerciseBST::searchRC(ExerciseBSTNode* node, string exce) ;
-
+	bool empty() { return root == nullptr; }
 	void print(ExerciseBSTNode* tmp);
 	void delete_node(ExerciseBSTNode* input);
 	ExerciseBSTNode*  delete_eq(string order);
