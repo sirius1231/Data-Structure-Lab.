@@ -6,10 +6,10 @@ Routine::Routine() :head(nullptr),tail(nullptr),count(0),total_kcal(0),total_sec
 
 Routine::~Routine() {
 	RoutineNode* tmp=head;
-	RoutineNode* tmpp=head->getnext();
-	while(tmp!=nullptr){
-		tmpp=tmp->getnext();
-		delete(tmp);
+	while(tmp != nullptr){
+		RoutineNode* tmpp = tmp->getnext();
+		delete tmp;
+		tmp = tmpp;
 	}
 }
 RoutineNode* Routine::mnode(const vector<string>& input){
@@ -23,46 +23,64 @@ RoutineNode* Routine::mnode(const vector<string>& input){
     int total_s = (min * 60) + sec;
 
 	RoutineNode* tmp =new RoutineNode (input[0],input[1],input[2],total_s,k);
-	total_sec  +=l;
+	total_sec  +=total_s;
 	total_kcal +=k;
 	return tmp;
 }
-
 void Routine::push_front(const vector<string>& input) {
-	RoutineNode* tmp =mnode(input);
-	tmp->set(head);
-	head=tmp;
-	count ++;
-}
-
-void Routine::push_back(const vector<string>& input) {
-	RoutineNode* tmp =mnode(input);
-	tail->set(tmp);
-	tail=tmp;
+	RoutineNode* tmp = mnode(input);
+	if (empty()) {
+		head = tmp;
+		tail = tmp;
+	} else {
+		tmp->set(head);
+		head = tmp;
+	}
 	count++;
 }
 
+void Routine::push_back(const vector<string>& input) {
+	RoutineNode* tmp = mnode(input);
+	if (empty()) {
+		head = tmp;
+		tail = tmp;
+	} else {
+		tail->set(tmp);
+		tail = tmp;
+	}
+	count++;
+}
 bool Routine::pop_front() {
-	if(this->empty())return false;
-	RoutineNode* tmp =head;
-	head=head->getnext();
-	total_sec  -=tmp->getsec();
-	total_kcal -=tmp->getkcal();
-	delete(tmp);
-	head->mhead();
+	if(this->empty()) return false;
+	RoutineNode* tmp = head;
+	head = head->getnext();
+	total_sec -= tmp->getsec();
+	total_kcal -= tmp->getkcal();
+	delete tmp;
 	count--;
+	
+	if(head == nullptr) {
+		tail = nullptr;
+	} else {
+		head->mhead();
+	}
 	return true;
 }
 
 bool Routine::pop_back() {
-	if(this->empty())return false;
-		RoutineNode* tmp =tail;
-	tail=tail->getprev();
-	total_sec  -=tmp->getsec();
-	total_kcal -=tmp->getkcal();
-	delete(tmp);
-	tail->mtail();
+	if(this->empty()) return false;
+	RoutineNode* tmp = tail;
+	tail = tail->getprev();
+	total_sec -= tmp->getsec();
+	total_kcal -= tmp->getkcal();
+	delete tmp;
 	count--;
+	
+	if(tail == nullptr) {
+		head = nullptr;
+	} else {
+		tail->mtail();
+	}
 	return true;
 }
 
