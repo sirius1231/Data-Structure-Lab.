@@ -80,6 +80,7 @@ public:
 		this-> exercise=input.exercise;
 		this->sets=input.sets;
 		this->count=input.count;
+		return *this;
 	}
 	void disconnect(bool k){
 		if(k){
@@ -123,6 +124,7 @@ public:
 				return this->info(i);
 			}
 		}
+		return vector<string>();
 	}
 
 };

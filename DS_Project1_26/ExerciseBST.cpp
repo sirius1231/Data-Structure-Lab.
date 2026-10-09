@@ -1,7 +1,7 @@
 #include "ExerciseBST.h"
-
+#include "Manager.h"
 ExerciseBST::ExerciseBST(outstream& ost):os(ost){
-
+    root= nullptr;
 }
 
 ExerciseBST::~ExerciseBST() {
@@ -17,7 +17,7 @@ void ExerciseBST::insert(vector<string>& input) {
         return;
     }else{
         tmp=new ExerciseBSTNode(input);
-        if(root=nullptr)root=tmp;
+        if(root==nullptr)root=tmp;
         else{
             target=root;
             position(tmp);
@@ -112,7 +112,7 @@ void ExerciseBST::delete_node(ExerciseBSTNode* input) {
         delete_node(tmp);
     }
 }
-void terminate(ExerciseBSTNode* input){
+void ExerciseBST::terminate(ExerciseBSTNode* input){
     if (input==nullptr)return;
     //memory delete(post oredr traversal)
     terminate(input->get_left());

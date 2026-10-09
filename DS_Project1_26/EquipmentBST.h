@@ -1,7 +1,6 @@
 #pragma once
 #include "EquipmentBSTNode.h"
-#include "Manager.h"
-
+class outstream;
 class EquipmentBST {
 private:
 	EquipmentBSTNode* root;
@@ -18,4 +17,7 @@ public:
 	void print(EquipmentBSTNode* tmp);
 	void delete_node(EquipmentBSTNode* input);
 	void terminate(EquipmentBSTNode* input);
+	EquipmentBSTNode* delete_ex(string order);
+	EquipmentBSTNode* delete_exRC(EquipmentBSTNode* node, string exce);
+	void print() { print(root); }
 };

@@ -80,6 +80,7 @@ public:
 		this-> equipment=input.equipment;
 		this->sets=input.sets;
 		this->count=input.count;
+		return *this;
 	}
 	void disconnect(bool k){
 		if(k){
@@ -100,4 +101,19 @@ public:
 		info.push_back(to_string(sets[i].kcal));
 		return info;
 	}
+	bool delete_ex(string exce){
+		for(int i = 0; i < count; ){
+			if(sets[i].exercise == exce){
+				sets.erase(sets.begin() + i);
+				count--;
+			}else{
+				i++;
+			}
+		}
+		if (count <= 0){
+			return true;
+		}
+		return false;
+	}
+	int getnum() { return count; }
 };

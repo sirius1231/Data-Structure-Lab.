@@ -1,0 +1,268 @@
+========LOAD========
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+Lunge/dumbbell/2:10/90
+Lunge/bodyweight/1:50/70
+Deadlift/barbell/3:00/145
+Deadlift/kettlebell/2:20/110
+Bench Press/barbell/2:40/115
+Bench Press/dumbbell/2:20/100
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Pull Up/bodyweight/2:00/95
+Overhead Press/barbell/2:10/90
+Overhead Press/dumbbell/1:50/80
+Lateral Raise/dumbbell/1:30/60
+Plank/bodyweight/1:15/45
+Calf Raise/machine/1:10/50
+====================
+========ERROR========
+100
+====================
+========ADD========
+Burpee/bodyweight/2:45/130
+====================
+========ERROR========
+200
+====================
+========ERROR========
+600
+====================
+========ERROR========
+700
+====================
+========ERROR========
+700
+====================
+========QPOP========
+Success
+====================
+========ERROR========
+300
+====================
+========SEARCH========
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+====================
+========SEARCH========
+Squat/dumbbell/2:00/95
+Lunge/dumbbell/2:10/90
+Bench Press/dumbbell/2:20/100
+Overhead Press/dumbbell/1:50/80
+Lateral Raise/dumbbell/1:30/60
+====================
+========SEARCH========
+Deadlift/kettlebell/2:20/110
+====================
+========ERROR========
+400
+====================
+========MAKERT========
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Count : 2 / 10
+Time : 4min 10sec
+Kcal : 190
+====================
+========ERROR========
+500
+====================
+========MAKERT========
+Plank/bodyweight/1:15/45
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Count : 3 / 10
+Time : 5min 25sec
+Kcal : 235
+====================
+========ERROR========
+500
+====================
+========MAKERT========
+Plank/bodyweight/1:15/45
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Calf Raise/machine/1:10/50
+Count : 4 / 10
+Time : 6min 35sec
+Kcal : 285
+====================
+========MAKERT========
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+Plank/bodyweight/1:15/45
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Calf Raise/machine/1:10/50
+Count : 7 / 10
+Time : 12min 35sec
+Kcal : 560
+====================
+========MAKERT========
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+Plank/bodyweight/1:15/45
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Calf Raise/machine/1:10/50
+Pull Up/bodyweight/2:00/95
+Count : 8 / 10
+Time : 14min 35sec
+Kcal : 655
+====================
+========ERROR========
+500
+====================
+========MAKERT========
+Bench Press/dumbbell/2:20/100
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+Plank/bodyweight/1:15/45
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Calf Raise/machine/1:10/50
+Pull Up/bodyweight/2:00/95
+Count : 9 / 10
+Time : 16min 55sec
+Kcal : 755
+====================
+========MAKERT========
+Bench Press/dumbbell/2:20/100
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+Plank/bodyweight/1:15/45
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Calf Raise/machine/1:10/50
+Pull Up/bodyweight/2:00/95
+Lateral Raise/dumbbell/1:30/60
+Count : 10 / 10
+Time : 18min 25sec
+Kcal : 815
+====================
+========ERROR========
+500
+====================
+========ERROR========
+500
+====================
+========PRINT========
+Bench Press/barbell/2:40/115
+Bench Press/dumbbell/2:20/100
+Burpee/bodyweight/2:45/130
+Calf Raise/machine/1:10/50
+Deadlift/barbell/3:00/145
+Deadlift/kettlebell/2:20/110
+Lateral Raise/dumbbell/1:30/60
+Lunge/dumbbell/2:10/90
+Lunge/bodyweight/1:50/70
+Overhead Press/barbell/2:10/90
+Overhead Press/dumbbell/1:50/80
+Plank/bodyweight/1:15/45
+Pull Up/bodyweight/2:00/95
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+====================
+========PRINT========
+Squat/barbell/2:30/120
+Deadlift/barbell/3:00/145
+Bench Press/barbell/2:40/115
+Row/barbell/2:15/105
+Overhead Press/barbell/2:10/90
+Squat/bodyweight/1:30/60
+Lunge/bodyweight/1:50/70
+Pull Up/bodyweight/2:00/95
+Plank/bodyweight/1:15/45
+Burpee/bodyweight/2:45/130
+Row/cable/1:55/85
+Squat/dumbbell/2:00/95
+Lunge/dumbbell/2:10/90
+Bench Press/dumbbell/2:20/100
+Overhead Press/dumbbell/1:50/80
+Lateral Raise/dumbbell/1:30/60
+Deadlift/kettlebell/2:20/110
+Calf Raise/machine/1:10/50
+====================
+========PRINT========
+Bench Press/dumbbell/2:20/100
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+Plank/bodyweight/1:15/45
+Row/barbell/2:15/105
+Row/cable/1:55/85
+Calf Raise/machine/1:10/50
+Pull Up/bodyweight/2:00/95
+Lateral Raise/dumbbell/1:30/60
+Count : 10 / 10
+Time : 18min 25sec
+Kcal : 815
+====================
+========DELETE========
+Success
+====================
+========DELETE========
+Success
+====================
+========DELETE========
+Success
+====================
+========DELETE========
+Success
+====================
+========DELETE========
+Success
+====================
+========DELETE========
+Success
+====================
+========ERROR========
+700
+====================
+========DELETE========
+Success
+====================
+========PRINT========
+Bench Press/barbell/2:40/115
+Bench Press/dumbbell/2:20/100
+Burpee/bodyweight/2:45/130
+Deadlift/barbell/3:00/145
+Deadlift/kettlebell/2:20/110
+Lateral Raise/dumbbell/1:30/60
+Lunge/bodyweight/1:50/70
+Overhead Press/barbell/2:10/90
+Overhead Press/dumbbell/1:50/80
+Plank/bodyweight/1:15/45
+Pull Up/bodyweight/2:00/95
+Row/barbell/2:15/105
+Squat/barbell/2:30/120
+Squat/dumbbell/2:00/95
+Squat/bodyweight/1:30/60
+====================
+========DELETE========
+Success
+====================
+========PRINT========
+Squat/barbell/2:30/120
+Squat/bodyweight/1:30/60
+Row/barbell/2:15/105
+Pull Up/bodyweight/2:00/95
+Count : 4 / 10
+Time : 8min 15sec
+Kcal : 380
+====================
+========ERROR========
+1000
+====================
+========EXIT========
+Success
+====================

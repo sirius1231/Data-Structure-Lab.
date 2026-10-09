@@ -1,7 +1,6 @@
 #include "Routine.h"
 
-Routine::Routine() :head(nullptr),tail(nullptr),count(0),total_kcal(0),total_sec(0),capacity(10){
-
+Routine::Routine() :head(nullptr),tail(nullptr),count(0),total_sec(0),total_kcal(0),capacity(10){
 }
 
 Routine::~Routine() {
@@ -13,7 +12,7 @@ Routine::~Routine() {
 	}
 }
 RoutineNode* Routine::mnode(const vector<string>& input){
-	int k,l;
+	int k;
 	stringstream ss(input[3]);
 	ss>>k;
 	int min, sec;
@@ -99,12 +98,28 @@ RoutineNode* Routine::exist(const vector<string>& input) {
 	RoutineNode* tmp=head;
 	while(tmp!=nullptr){
 		if(tmp->search(input[0],input[1]))return tmp;
+		tmp = tmp->getnext();
 	}
 	return nullptr;
 }
 
 string Routine::print() {
-	return "";
+	stringstream ss;
+    RoutineNode* tmp = head;
+    
+    while(tmp != nullptr) {
+        ss << tmp->print() << "\n";
+        tmp = tmp->getnext();
+    }
+    int min = total_sec / 60;
+    int sec = total_sec % 60;
+    
+    ss << "Count : " << count << " / " << capacity << "\n";
+    ss << "Time : " << min << "min " << sec << "sec\n";
+    ss << "Kcal : " << total_kcal ; 
+    
+    
+    return ss.str();
 }
 
 int Routine::duration() {
@@ -129,6 +144,7 @@ void Routine::delete_ex(string input) {
 			}
 			total_sec -= tmp->getsec();
 			total_kcal -= tmp->getkcal();
+			count --;
 			delete tmp;
 		}
 		tmp = tmpp;
@@ -148,6 +164,7 @@ void Routine::delete_eq(string input) {
 			}
 			total_sec -= tmp->getsec();
 			total_kcal -= tmp->getkcal();
+			count --;
 			delete tmp;
 		}
 		tmp = tmpp;
@@ -168,7 +185,9 @@ bool Routine::delete_node(const vector<string>& input) {
 			}
 			total_sec -= tmp->getsec();
 			total_kcal -= tmp->getkcal();
+			count --;
 			delete tmp;
+
 			ttt = true;
 		}
 		tmp = tmpp;

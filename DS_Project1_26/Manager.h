@@ -8,6 +8,23 @@
 
 using namespace std;
 
+enum commend { Load, Add, Qpop, Search, Makert, Print, Delete, Exit, Error,Line };class outstream{
+private:
+    FILE* fp;
+public:
+    outstream ();
+    outstream&  operator<<(string input);
+    outstream&  operator<<(WorkoutQueueNode*input);
+    outstream&  operator<<(ExerciseBSTNode* input);
+	outstream&  operator<<(EquipmentBSTNode* input);
+	outstream&  operator<<(RoutineNode* input );
+	outstream&  operator<<( commend input);
+
+    void line();
+    void order(string order);
+    void error(int k);
+    ~outstream ();
+};
 class Manager {
 private:
 	WorkoutQueue q;
@@ -26,29 +43,12 @@ public:
 	void run(const char* command);
 
 	void LOAD();
-	void ADD();
+	void ADD(string commend);
 	void QPOP();
 	void SEARCH(string commend);
-	void MAKERT();
-	void PRINT();
+	void MAKERT(string commend);
+	void PRINT(string commend);
 	void DELETE(string commend);
 	void EXIT();
 	void COMMENDERROR();
-};
-class outstream{
-private:
-    FILE* fp;
-public:
-    outstream ();
-    outstream&  operator<<(string input);
-    outstream&  operator<<(WorkoutQueueNode*input);
-    outstream&  operator<<(ExerciseBSTNode* input);
-	outstream&  operator<<(EquipmentBSTNode* input);
-	outstream&  operator<<(RoutineNode* input );
-	outstream&  operator<<( commend input);
-
-    void line();
-    void order(string order);
-    void error(int k);
-    ~outstream ();
 };

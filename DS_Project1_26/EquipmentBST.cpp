@@ -1,30 +1,37 @@
 #include "EquipmentBST.h"
-
+#include "Manager.h"
 EquipmentBST::EquipmentBST(outstream& ost):os(ost) {
-
+    root = nullptr;
 }
 
 EquipmentBST::~EquipmentBST() {
     terminate(root);
     root=nullptr;
 }
-
 void EquipmentBST::insert(vector<string>& input) {
-    target=root;
-    EquipmentBSTNode*tmp=search(input[0]);
-    if(tmp!=nullptr){
+    target = root;
+    EquipmentBSTNode* tmp = search(input[1]); 
+    if(tmp != nullptr){
         tmp->set(input);
         return;
-    }else{
-        tmp=new EquipmentBSTNode(input);
-        if(root=nullptr)root=tmp;
-        else{
-            target=root;
+    } else {
+        tmp = new EquipmentBSTNode(input);
+        if(root == nullptr) root = tmp; 
+        else {
+            target = root;
             position(tmp);
         }
     }
+}
 
-
+EquipmentBSTNode* EquipmentBST::search(string exce) {
+    EquipmentBSTNode* tmp = root;
+    while (tmp != nullptr) {
+        if (tmp->getname() == exce) return tmp;
+        else if (tmp->getname() > exce) tmp = tmp->get_left();
+        else tmp = tmp->get_right();
+    }
+    return nullptr;
 }
 void EquipmentBST::position(EquipmentBSTNode*tmp) {
     if(tmp->getname()>target->getname()){
@@ -50,30 +57,7 @@ void EquipmentBST::position(EquipmentBSTNode*tmp) {
     }
     }
 }
-EquipmentBSTNode* EquipmentBST::search(string exce) {
-    if (target==nullptr)return;
-    EquipmentBSTNode* tmp=nullptr;
 
-    //Inorder Traversal
-    target=target->get_left();   //left 
-    tmp=target->search(exce);
-    if(tmp!=nullptr){
-        target=root;
-        return tmp;
-    }//find->break
-
-    tmp=target->search(exce);   //visit
-    if(tmp!=nullptr){
-        target=root;
-        return tmp;
-    }
-    target=target->get_right();  //right
-    tmp=target->search(exce);
-    if(tmp!=nullptr){
-        target=root;
-        return tmp;
-    }
-}
 void EquipmentBST::print(EquipmentBSTNode* tmp) {
     if (tmp==nullptr)return;
     //Inorder Traversal(LVR)
@@ -129,4 +113,17 @@ void EquipmentBST::terminate(EquipmentBSTNode* input){
     delete(input);
     return;
 
+}
+EquipmentBSTNode* EquipmentBST::delete_ex(string exce) {
+    return delete_exRC(root, exce);
+}
+
+EquipmentBSTNode* EquipmentBST::delete_exRC(EquipmentBSTNode* node, string exce) {
+    if (node == nullptr) return nullptr;
+
+    delete_exRC(node->get_left(), exce);
+    node->delete_ex(exce);
+    delete_exRC(node->get_right(), exce);
+
+    return node;
 }

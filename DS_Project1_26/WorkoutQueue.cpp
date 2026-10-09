@@ -1,7 +1,7 @@
 #include "WorkoutQueue.h"
 
 WorkoutQueue::WorkoutQueue()
-:head(nullptr),rear(nullptr){
+:head(nullptr),rear(nullptr),size(0){
 
 }
 
@@ -66,7 +66,16 @@ WorkoutQueueNode* WorkoutQueue::pop() {
 }
 
 WorkoutQueueNode* WorkoutQueue::front() {
-	WorkoutQueueNode* tmp= head;
 	
 	return head;
+}
+bool WorkoutQueue::StringTest(string input) {
+	int scount = 0;
+	for (char c : input) {
+		if (c == '|') scount++;
+	}
+	if (scount == 3) {
+		return true;
+	}
+	return false;
 }

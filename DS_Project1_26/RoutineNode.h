@@ -15,8 +15,7 @@ private:
 
 public:
 	RoutineNode(string exercise,string equipment,string dtime,int seconds,int kcal) 
-	:prev(nullptr),next(nullptr),exercise(exercise),
-	 equipment(equipment), dtime(dtime), seconds(seconds),kcal(kcal){}
+	: exercise(exercise), equipment(equipment), dtime(dtime), seconds(seconds), kcal(kcal), prev(nullptr), next(nullptr) {}
 	~RoutineNode() {
 		if(prev!=nullptr)this->prev->next=this->next;
 		if(next!=nullptr)this->next->prev=this->prev;
@@ -50,7 +49,7 @@ public:
 	}
 	string print(){
 		stringstream ss;
-		ss<<exercise<<"/"<<equipment<<"/"<<seconds<<"/"<<kcal;
+		ss<<exercise<<"/"<<equipment<<"/"<<dtime<<"/"<<kcal;
 		return ss.str();
 	}
 	bool seq(string input){
