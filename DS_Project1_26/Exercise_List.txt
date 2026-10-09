@@ -1,0 +1,17 @@
+Squat|barbell|2:30|120
+Squat|dumbbell|2:00|95
+Squat|bodyweight|1:30|60
+Lunge|dumbbell|2:10|90
+Lunge|bodyweight|1:50|70
+Deadlift|barbell|3:00|145
+Deadlift|kettlebell|2:20|110
+Bench Press|barbell|2:40|115
+Bench Press|dumbbell|2:20|100
+Row|barbell|2:15|105
+Row|cable|1:55|85
+Pull Up|bodyweight|2:00|95
+Overhead Press|barbell|2:10|90
+Overhead Press|dumbbell|1:50|80
+Lateral Raise|dumbbell|1:30|60
+Plank|bodyweight|1:15|45
+Calf Raise|machine|1:10|50
